@@ -1,0 +1,7 @@
+This algorithm detects faces in an image and identifies the largest oval within each face. It begins by loading and preprocessing the image, which involves converting it to grayscale and applying Gaussian Blur to reduce noise. Next, the Canny edge detection algorithm is used to highlight the edges, creating a binary image where edges are prominent. Morphological filtering then closes gaps in these edges to form continuous contours.
+
+Contours are identified from the filtered edge image, and ovals are fitted to these contours using ellipse fitting techniques. Afterward, faces are detected using Haar Cascades, which identify regions likely containing faces.
+
+For each detected face, the algorithm checks which ovals are centered within the face’s boundary and calculates their areas. The largest oval is selected based on this area. Finally, the top-left coordinates, width, and height of the bounding rectangle around this largest oval are printed, and both the oval and its bounding rectangle are drawn on the image for visualization.
+
+This process effectively combines face detection with oval fitting to highlight the most significant oval features within each face, aiding in accurate image analysis and recognition.
